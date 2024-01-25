@@ -22,15 +22,15 @@ const CourseDetail = ({ params, userId }: { params: any, userId: string | null }
       {/* <div className="w-full fixed"><Navbar/></div> */}
       <div className="w-full flex justify-center min-h-screen items-center">
         {course && courseId ? (
-          <div className="w-2/3 h-[500px] flex justify-center gap-x-10">
-            <div className="border w-full p-2 flex items-center rounded-md border-violet-500 h-full bg-gradient-to-r from-violet-900 to-gray-900">
-              <div className="w-1/2 shadow-xl">
+          <div className="w-2/3 h-[400px] flex justify-center items-center gap-x-10">
+            <div className="border w-full p-2 flex flex-col md:flex-row items-center justify-center rounded-md border-violet-500 h-full bg-gradient-to-r from-violet-900 to-gray-900">
+              <div className="w-full md:w-1/2 shadow-xl">
                 <Image src={course[0]?.image} alt="Course Image" className="rounded-md" width={500} height={300} />
               </div>
-              <div className="w-1/2 p-2">
-                <p className="text-3xl m-2 font-bold">{course[0]?.title}</p>
-                <p className="text-sm">{course[0]?.description}</p>
-                <p className="text-sm m-4">Instructor: {course[0]?.instructor}</p>
+              <div className="w-full md:w-1/2 p-2 ">
+                <p className="text-base md:text-3xl m-2 font-bold">{course[0]?.title}</p>
+                <p className="text-xs md:text-sm">{course[0]?.description}</p>
+                <p className="text-xs md:text-sm m-4">Instructor: {course[0]?.instructor}</p>
                 <p>₹ {course[0]?.price}</p>
               </div>
             </div>
