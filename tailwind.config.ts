@@ -13,8 +13,26 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      gradientColorStops: theme => ({
+        'neon-blue': '#03a9f4',
+        'neon-pink': '#e91e63',
+      }),
+      borderColor: theme => ({
+        'neon-blue': '#03a9f4',
+        'neon-pink': '#e91e63',
+      }),
+      skew: {
+        '6': '6deg',
+      },
+      rotate: {
+        '-6': '-6deg',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+  require('@tailwindcss/aspect-ratio'),
+  require('@tailwindcss/forms'),
+  require('@tailwindcss/line-clamp'),
+  require('@tailwindcss/typography'),],
 }
 export default config
