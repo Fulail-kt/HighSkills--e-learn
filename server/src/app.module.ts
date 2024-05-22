@@ -7,7 +7,7 @@ import { AdminModule } from './admin/admin.module';
 import { DatabaseModule } from './database/database.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from './entities/userEntity';
-import { course } from './entities/courseEntity';
+import { Course } from './entities/courseEntity';
 
 
 @Module({
@@ -18,9 +18,10 @@ import { course } from './entities/courseEntity';
     username: 'root',
     password: 'mysql',
     database: 'Elearn',
-    entities: [UserEntity,course ],
-    synchronize: false,
+    entities: [UserEntity,Course ],
+    synchronize:false
   })],
+
   controllers: [AppController],
   providers: [AppService],
 })

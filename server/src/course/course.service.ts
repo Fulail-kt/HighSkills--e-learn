@@ -1,15 +1,17 @@
 import { Inject, Injectable, Req } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { course } from 'src/entities/courseEntity';
+import { Course } from 'src/entities/courseEntity';
 import { Repository } from 'typeorm';
+import  admin from 'firebase-admin'
+import  File  from 'multer';
 
 @Injectable()
 export class CourseService {
-    constructor(   @InjectRepository(course)
-    private courseRepository: Repository<course>,) {}
+    constructor(   @InjectRepository(Course)
+    private courseRepository: Repository<Course>,) {}
 
 
-    async getCourse(id?: number|any): Promise<course | course[]> {
+    async getCourse(id?: number|any): Promise<Course | Course[]> {
         if (id) {
             const selected={
                 where:{
@@ -21,7 +23,8 @@ export class CourseService {
         return this.courseRepository.find();
       }
 
-   async createCourse(data:any){
+      async createCourse(data:any){
+        console.log(data,"dsalfdksaoasfsoialjka")
         const course = this.courseRepository.create(data);
         await this.courseRepository.save(course);
         return "successFull created course"

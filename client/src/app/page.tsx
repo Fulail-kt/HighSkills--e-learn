@@ -8,6 +8,8 @@ import Carousel from '@/components/carousal/Carousal';
 import CourseCard from '@/components/card/Card';
 import { courses } from '@/constant/course';
 
+
+
 export default function Home() {
   return (
     <>

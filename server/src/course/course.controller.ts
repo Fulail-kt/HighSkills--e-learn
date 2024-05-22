@@ -1,5 +1,6 @@
-import { Body, Controller, Get, Param, Patch, Post, Query, Session } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Query, Req, Session } from '@nestjs/common';
 import { CourseService } from './course.service';
+
 
 @Controller('course')
 export class CourseController {
@@ -10,10 +11,10 @@ export class CourseController {
         return this.courseService.getCourse(id)
     }
 
-
     @Post()
-    creatCourse(@Body() body:any){
-        return this.courseService.createCourse(body)
+    createCourse(@Body() body: any) {
+       
+        return this.courseService.createCourse(body);
     }
 
     @Patch(':id')

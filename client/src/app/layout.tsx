@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
@@ -30,6 +30,6 @@ export default function RootLayout({
           </div>
         </body>
       </html>
-    </ClerkProvider>
+  
   )
 }

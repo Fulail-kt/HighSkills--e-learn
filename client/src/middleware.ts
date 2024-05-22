@@ -1,7 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
 
 // Specify the routes that should be considered public
-const publicRoutes = ["/","/course","/course/(.*)"]
+const publicRoutes = ["/","/course","/course/(.*)","/admin",'/admin/(.*)',"/cart","/profile"]
 
 
 export default authMiddleware({
